@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c873v45kg8bss"]
+
+[ext_resource type="Script" path="res://QuestManager.gd" id="1_4xbro"]
+
+[node name="QuestManager" type="Node"]
+script = ExtResource("1_4xbro")
+
+[node name="NewRoomTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnnounceScoreTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="NewRoomTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="AnnounceScoreTimer" to="." method="_on_announce_score_timer_timeout"]
